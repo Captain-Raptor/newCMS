@@ -1,0 +1,13 @@
+module.exports.authService = require('./auth.service');
+module.exports.emailService = require('./email.service');
+module.exports.tokenService = require('./token.service');
+module.exports.userService = require('./user.service');
+module.exports.companyService = require('./company.service');
+module.exports.eventService = require('./eventApi.service');
+module.exports.eventSubmissionService = require('./eventSubmission.service');
+module.exports.s3Service = require('./s3Service');
+module.exports.blogApiService = require('./blogApi.service');
+module.exports.blogService = require('./blog.service');
+module.exports.campaignApiService = require('./campaignApi.service');
+module.exports.campaignService = require('./campaign.service');
+module.exports.websiteService = require('./webiste.service')

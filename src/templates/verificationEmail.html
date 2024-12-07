@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f9f9fb;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #f1f1f1;
+    }
+
+    .header img {
+      width: 150px;
+    }
+
+    .header h1 {
+      color: #6f2dbd;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 20px 0 0;
+      letter-spacing: 1px;
+    }
+
+    .content {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #4a4a4a;
+      padding: 30px 0;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background-color: #6f2dbd;
+      color: #ffffff;
+      padding: 14px 36px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(111, 45, 189, 0.2);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #5b23a5;
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #888888;
+    }
+
+    .footer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .email-container {
+        padding: 20px;
+      }
+
+      .header img {
+        width: 120px;
+      }
+
+      .btn {
+        padding: 12px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://imaggar.in/logo.png" alt="Imaggar Logo" />
+      <h1>Verify Your Email</h1>
+    </div>
+    <div class="content">
+      <p>Dear user,</p>
+      <p>Thank you for joining us at Imaggar! Please click the button below to verify your email and activate your account.</p>
+      <div class="btn-container">
+        <a href="{{verificationEmailUrl}}" class="btn">Verify Email</a>
+      </div>
+      <p>If you didn't sign up for an account, you can safely ignore this email.</p>
+    </div>
+    <div class="footer">
+      <p>&copy; 2024 Imaggar Technologies. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
