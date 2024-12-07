@@ -52,9 +52,34 @@ app.use(mongoSanitize());
 app.use(compression());
 
 // enable cors
-app.use(cors());
-app.options('*', cors());
+const cors = require('cors');
 
+// Allow specific domains
+const allowedOrigins = [
+  'https://imaggar.in',        // Your frontend domain
+  'https://www.imaggar.in',    // Alternative with "www"
+  'http://localhost:5000',     // Local development
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin, such as mobile apps or server-to-server requests
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+  credentials: true,                                   // Allow credentials like cookies, headers
+  allowedHeaders: ['Content-Type', 'Authorization'],   // Allowed headers
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
+
+// Enable preflight requests (OPTIONS)
+app.options('*', cors(corsOptions));
 // jwt authentication
 app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
