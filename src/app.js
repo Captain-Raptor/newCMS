@@ -51,14 +51,14 @@ app.use(mongoSanitize());
 // gzip compression
 app.use(compression());
 
-// enable cors
-const cors = require('cors');
 
 // Allow specific domains
 const allowedOrigins = [
   'https://imaggar.in',        // Your frontend domain
   'https://www.imaggar.in',    // Alternative with "www"
   'http://localhost:5000',     // Local development
+  'http://localhost:5173',     // Local development
+
 ];
 
 const corsOptions = {
